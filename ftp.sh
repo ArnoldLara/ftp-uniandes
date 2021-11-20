@@ -8,7 +8,7 @@
 if [[ $1 == "--config" || $1 == "config" ]]; then
     echo "Configuración"
 
-    echo "Escriba donde está ejecutando este programa (L)Linux (M)MAC: "
+    echo "Escriba donde está ejecutando este programa (L)Ubuntu-Linux (M)MAC: "
     read so   
     if [[ $so == "L" || $so == "l" ]]; then
         echo "Configurando Sistema LINUX"
