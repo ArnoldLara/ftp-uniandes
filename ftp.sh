@@ -23,7 +23,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         pip3 install pyftpdlib
 
         #Ejecutando inicio del programa
-        ./ftp.sh start
+        ftp-uniandes/ftp.sh start
 
     elif [[ $so == "C" || $so == "c" ]]; then
         echo "Configurando Sistema CentOS-LINUX"
@@ -33,10 +33,11 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         firewall-cmd --zone=public --permanent --add-port=5890-5900/tcp
 
         #Instalación de librerias
+        yum install python3-pip -y
         pip3 install pyftpdlib –-user
 
         #Inicio del programa
-        ./ftp.sh start
+        ftp-uniandes/ftp.sh start
         
 
     elif [[ $so == "M" || $so == "m" ]]; then
@@ -46,7 +47,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         pip3 install pyftpdlib –-user
 
         #Inicio del programa
-        ./ftp.sh start
+        ftp-uniandes/ftp.sh start
        
     else echo "Opción no valida"
     fi
