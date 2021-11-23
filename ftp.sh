@@ -16,8 +16,8 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
     if [[ $so == "U" || $so == "u" ]]; then
         echo "Configurando Sistema Ubuntu-LINUX"
         #Configuración de puertos del FW
-        ufw allow 2121/tcp
-        ufw allow 5890:5900/tcp
+        sudo ufw allow 2121/tcp
+        sudo ufw allow 5890:5900/tcp
 
         sudo apt install python3-pip
         pip3 install pyftpdlib
@@ -29,15 +29,15 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         echo "Configurando Sistema CentOS-LINUX"
 
         #Configuración de puertos del FW
-        firewall-cmd --zone=public --permanent --add-port=2121/tcp
-        firewall-cmd --zone=public --permanent --add-port=5890-5900/tcp
+        sudo firewall-cmd --zone=public --permanent --add-port=2121/tcp
+        sudo firewall-cmd --zone=public --permanent --add-port=5890-5900/tcp
 
         #Instalación de librerias
-        yum install python3-pip -y
-        pip3 install pyftpdlib –-user
+        sudo yum install python3-pip -y
+        pip3 install pyftpdlib 
 
         #Inicio del programa
-        ftp-uniandes/ftp.sh start
+        ftp-uniandes/ftp.sh --start
         
 
     elif [[ $so == "M" || $so == "m" ]]; then
@@ -47,7 +47,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         pip3 install pyftpdlib –-user
 
         #Inicio del programa
-        ftp-uniandes/ftp.sh start
+        ftp-uniandes/ftp.sh --start
        
     else echo "Opción no valida"
     fi
