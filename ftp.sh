@@ -8,10 +8,13 @@
 if [[ $1 == "--config" || $1 == "config" ]]; then
     echo "Configuración"
 
-    echo "Escriba donde está ejecutando este programa (L)Ubuntu-Linux (M)MAC: "
+    echo "Escriba el sistema operativo donde está ejecutando este programa"
+    echo "  (U)Ubuntu20-Linux"
+    echo "  (C)CentOS7-Linux"
+    echo "  (M)MAC"
     read so   
-    if [[ $so == "L" || $so == "l" ]]; then
-        echo "Configurando Sistema LINUX"
+    if [[ $so == "U" || $so == "u" ]]; then
+        echo "Configurando Sistema Ubuntu-LINUX"
         #Configuración de puertos del FW
         ufw allow 2121/tcp
         ufw allow 5890:5900/tcp
@@ -22,8 +25,19 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         #Ejecutando inicio del programa
         ./ftp.sh start
 
-        #Copia del programa del servidor FTP
-        # git clone https://github.com/ArnoldLara/ftp-uniandes
+    elif [[ $so == "C" || $so == "c" ]]; then
+        echo "Configurando Sistema CentOS-LINUX"
+
+        #Configuración de puertos del FW
+        firewall-cmd --zone=public --permanent --add-port=2121/tcp
+        firewall-cmd --zone=public --permanent --add-port=5890-5900/tcp
+
+        #Instalación de librerias
+        pip3 install pyftpdlib –-user
+
+        #Inicio del programa
+        ./ftp.sh start
+        
 
     elif [[ $so == "M" || $so == "m" ]]; then
         echo "Configurando Sistema MAC"
@@ -33,8 +47,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
 
         #Inicio del programa
         ./ftp.sh start
-        #Copia del programa del servidor FTP
-        # git clone https://github.com/ArnoldLara/ftp-uniandes
+       
     else echo "Opción no valida"
     fi
 
