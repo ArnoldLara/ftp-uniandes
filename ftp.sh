@@ -31,8 +31,12 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         sudo apt install python3-pip
         pip3 install pyftpdlib
 
-        #Ejecutando inicio del programa
-        ~/ftp-uniandes/ftp.sh start
+        if [ -d "~/ftp-uniandes/" ] then
+            #Inicio del programa
+            ~/ftp-uniandes/ftp.sh --start
+        else
+         echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+        fi
 
     elif [[ $so == "C" || $so == "c" ]]; then
         echo "Configurando Sistema CentOS-LINUX"
@@ -45,8 +49,12 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         sudo yum install python3-pip -y
         pip3 install pyftpdlib 
 
-        #Inicio del programa
-        ~/ftp-uniandes/ftp.sh --start
+        if [ -d "~/ftp-uniandes/" ] then
+            #Inicio del programa
+            ~/ftp-uniandes/ftp.sh --start
+        else
+         echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+        fi
         
 
     elif [[ $so == "M" || $so == "m" ]]; then
@@ -55,8 +63,14 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         #Instalación de librerias
         pip3 install pyftpdlib –-user
 
-        #Inicio del programa
-        ~/ftp-uniandes/ftp.sh --start
+        
+
+        if [ -d "~/ftp-uniandes/" ] then
+            #Inicio del programa
+            ~/ftp-uniandes/ftp.sh --start
+        else
+         echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+        fi
        
     else echo "Opción no valida"
     fi
