@@ -34,8 +34,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         if [ -d "~/ftp-uniandes/" ] then
             #Inicio del programa
             ~/ftp-uniandes/ftp.sh --start
-        else
-         echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+        else echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
         fi
 
     elif [[ $so == "C" || $so == "c" ]]; then
@@ -52,8 +51,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         if [ -d "~/ftp-uniandes/" ] then
             #Inicio del programa
             ~/ftp-uniandes/ftp.sh --start
-        else
-         echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+        else echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
         fi
         
 
@@ -68,8 +66,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         if [ -d "~/ftp-uniandes/" ] then
             #Inicio del programa
             ~/ftp-uniandes/ftp.sh --start
-        else
-         echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+        else echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
         fi
        
     else echo "Opción no valida"
