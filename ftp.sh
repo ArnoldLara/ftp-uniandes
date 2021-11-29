@@ -38,7 +38,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
             #Inicio del programa
             $var/ftp-uniandes/ftp.sh --start
         else
-            echo "No se encontro el direcorio $var/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+            echo "No se encontro el direcorio $var/ftp-uniandes/, puede buscarlo e iniciar el programa con el comando ./ftp.sh --start"
         fi
 
     elif [[ $so == "C" || $so == "c" ]]; then
@@ -59,7 +59,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
             #Inicio del programa
             $var/ftp-uniandes/ftp.sh --start
         else
-            echo "No se encontro el direcorio $var/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+            echo "No se encontro el direcorio $var/ftp-uniandes/, puede buscarlo e iniciar el programa con el comando ./ftp.sh --start"
         fi
         
 
@@ -69,8 +69,6 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         #Instalación de librerias
         pip3 install pyftpdlib –-user
 
-        
-
         var=$(pwd)
         echo "Buscando directorio $var/ftp-uniandes/"
         if [ -d "$var/ftp-uniandes/" ]
@@ -78,7 +76,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
             #Inicio del programa
             $var/ftp-uniandes/ftp.sh --start
         else
-            echo "No se encontro el direcorio $var/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+            echo "No se encontro el direcorio $var/ftp-uniandes/, puede buscarlo e iniciar el programa con el comando ./ftp.sh --start"
         fi
        
     else echo "Opción no valida"
@@ -106,7 +104,7 @@ elif [[ $1 == "--start" || $1 == "start" ]]; then
         echo "Puedes acceder al servicio en esta dirección IP "
         hostname -I
         echo "Usando el puerto 2121"
-        python3 -m pyftpdlib -i 0.0.0.0 -p 2121 -r 5890-5900 -u $user -P $pass -d $dir
+        python3 -m pyftpdlib -i 0.0.0.0 -w -r 5890-5900 -u $user -P $pass -d $dir
 
     else
         echo "El directorio $dir no existe, verifica la ruta."
