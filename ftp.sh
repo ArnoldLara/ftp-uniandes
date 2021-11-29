@@ -1,13 +1,22 @@
 #!/bin/bash
-
 #Se pide al usuario que desea hacer. La opción de configuración solo debe ser
 #seleccionada la primera vez.
 # echo "Seleccione una acción: (C)Configuración - (I)Inicio servidor "
 # read sel
+#echo "Escriba el sistema operativo donde está ejecutando este programa"
+
+                         
+                                                                                                                                                                         
 
 if [[ $1 == "--config" || $1 == "config" ]]; then
-    echo "Configuración"
-
+    echo " ===================================================================================================="
+    echo "   ___|                    _|  _)                                              |                     "
+    echo "  |        _ \    __ \    |     |    _' |   |   |    __|    _' |   __ \     _' |    _ \              "
+    echo "  |       (   |   |   |   __|   |   (   |   |   |   |      (   |   |   |   (   |   (   |             "
+    echo " \____|  \___/   _|  _|  _|    _|  \__, |  \__,_|  _|     \__,_|  _|  _|  \__,_|  \___/   _)  _)  _) "
+    echo "                                   |___/                                                             "
+    echo " ===================================================================================================="
+                   
     echo "Escriba el sistema operativo donde está ejecutando este programa"
     echo "  (U)Ubuntu20-Linux"
     echo "  (C)CentOS7-Linux"
@@ -54,6 +63,12 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
 
 elif [[ $1 == "--start" || $1 == "start" ]]; then
     echo "Inicio"
+    echo " ==================================================================================="
+    echo "  ____|  _)   |            __ __|                                  _|               "
+    echo "  |       |   |    _ \        |      __|    _  |   __ \     __|   |      _ \    __| "
+    echo "  __|     |   |    __/        |     |      (   |   |   |  \__ \   __|    __/   |    "
+    echo " _|      _|  _|  \___|       _|    _|     \__,_|  _|  _|  ____/  _|    \___|  _|    "
+    echo " ==================================================================================="
 
     echo "Ingrese el nombre de usuario: "
     read user
