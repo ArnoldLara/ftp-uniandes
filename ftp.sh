@@ -32,7 +32,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         pip3 install pyftpdlib
 
         #Ejecutando inicio del programa
-        ftp-uniandes/ftp.sh start
+        ~/ftp-uniandes/ftp.sh start
 
     elif [[ $so == "C" || $so == "c" ]]; then
         echo "Configurando Sistema CentOS-LINUX"
@@ -46,7 +46,7 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         pip3 install pyftpdlib 
 
         #Inicio del programa
-        ftp-uniandes/ftp.sh --start
+        ~/ftp-uniandes/ftp.sh --start
         
 
     elif [[ $so == "M" || $so == "m" ]]; then
@@ -56,19 +56,20 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         pip3 install pyftpdlib –-user
 
         #Inicio del programa
-        ftp-uniandes/ftp.sh --start
+        ~/ftp-uniandes/ftp.sh --start
        
     else echo "Opción no valida"
     fi
 
 elif [[ $1 == "--start" || $1 == "start" ]]; then
-    echo "Inicio"
-    echo " ==================================================================================="
-    echo "  ____|  _)   |            __ __|                                  _|               "
-    echo "  |       |   |    _ \        |      __|    _  |   __ \     __|   |      _ \    __| "
-    echo "  __|     |   |    __/        |     |      (   |   |   |  \__ \   __|    __/   |    "
-    echo " _|      _|  _|  \___|       _|    _|     \__,_|  _|  _|  ____/  _|    \___|  _|    "
-    echo " ==================================================================================="
+
+    echo " ======================================================================================"
+    echo "  ____|  __ __|    _ \       |   |          _)      \                  |               "
+    echo "  |         |     |   |      |   |   __ \    |     _ \     __ \     _' |    _ \    __| "
+    echo "  __|       |     ___/       |   |   |   |   |    ___ \    |   |   (   |    __/  \__ \ "
+    echo " _|        _|    _|         \___/   _|  _|  _|  _/    _\  _|  _|  \__,_|  \___|  ____/ "
+    echo " ======================================================================================"
+                                                                                        
 
     echo "Ingrese el nombre de usuario: "
     read user
