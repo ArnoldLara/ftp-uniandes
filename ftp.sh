@@ -101,8 +101,7 @@ elif [[ $1 == "--start" || $1 == "start" ]]; then
     
     if [ -d "$dir" ]
     then
-        echo "Puedes acceder al servicio en esta dirección IP "
-        hostname -I
+        echo "Puedes acceder al servicio con la dirección IP: $(hostname -I) "
         echo "Usando el puerto 2121"
         python3 -m pyftpdlib -i 0.0.0.0 -w -r 5890-5900 -u $user -P $pass -d $dir
 
