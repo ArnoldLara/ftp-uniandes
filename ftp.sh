@@ -31,12 +31,14 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         sudo apt install python3-pip
         pip3 install pyftpdlib
 
-        if [ -d "~/ftp-uniandes/" ]
+        var=$(pwd)
+        echo "Buscando directorio $var/ftp-uniandes/"
+        if [ -d "$var/ftp-uniandes/" ]
         then
             #Inicio del programa
-            ~/ftp-uniandes/ftp.sh --start
+            $var/ftp-uniandes/ftp.sh --start
         else
-            echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+            echo "No se encontro el direcorio $var/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
         fi
 
     elif [[ $so == "C" || $so == "c" ]]; then
@@ -50,12 +52,14 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
         sudo yum install python3-pip -y
         pip3 install pyftpdlib 
 
-        if [ -d "~/ftp-uniandes/" ]
+        var=$(pwd)
+        echo "Buscando directorio $var/ftp-uniandes/"
+        if [ -d "$var/ftp-uniandes/" ]
         then
             #Inicio del programa
-            ~/ftp-uniandes/ftp.sh --start
+            $var/ftp-uniandes/ftp.sh --start
         else
-            echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+            echo "No se encontro el direcorio $var/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
         fi
         
 
@@ -67,12 +71,14 @@ if [[ $1 == "--config" || $1 == "config" ]]; then
 
         
 
-        if [ -d "~/ftp-uniandes/" ] 
+        var=$(pwd)
+        echo "Buscando directorio $var/ftp-uniandes/"
+        if [ -d "$var/ftp-uniandes/" ]
         then
             #Inicio del programa
-            ~/ftp-uniandes/ftp.sh --start
+            $var/ftp-uniandes/ftp.sh --start
         else
-            echo "No se encontro el direcorio ~/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
+            echo "No se encontro el direcorio $var/ftp-uniandes/, puedes buscar este directorio e iniciar el programa con el comando ./ftp.sh --start"
         fi
        
     else echo "Opción no valida"
